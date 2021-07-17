@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Convert JSON Data to HTML Table</title>
+    <style>
+        th,
+        td,
+        p,
+        input,
+        h3 {
+            font: 15px 'Segoe UI';
+        }
+        
+        table,
+        th,
+        td {
+            border: solid 1px #ddd;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+        
+        th {
+            font-weight: bold;
+        }
+        
+        textarea {
+            width: 650px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>
+        Click the button to create a dynamic table using data extracted from a JSON array.
+    </h3>
+    <textarea name="json_data" id="json_data" cols="30" rows="10"></textarea> <span>     </span></span><textarea name="json_data" id="html_data" cols="30" rows="10"></textarea>
+    <input type='button' onclick='tableFromJson()' value='Create Table from JSON data' />
+    <div class="container">
+        <p id='showData'></p>
+    </div>
+    </div>
+    <div>
+        <p id="demo"></p>
+    </div>
+
+
+    <p id='msg'></p>
+</body>
+<script src="form.js"></script>
+<script>
+</script>
+
+</html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

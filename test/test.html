@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Create a Form Dynamically with the JavaScript
+    </title>
+</head>
+
+<body style="text-align: center;">
+    <h1 style="color: green;">
+        GeeksforGeeks
+    </h1>
+    <p>
+        Click on the button to create a form dynamically
+    </p>
+    <button onClick="GFG_Fun()"> 
+			click here 
+		</button>
+    <p id="GFG_DOWN"></p>
+    <script>
+        var down = document.getElementById("GFG_DOWN");
+        var json = [{
+            "id": "10",
+            "class": "child-of-9"
+        }, {
+            "id": "11",
+            "classd": "child-of-10"
+        }];
+        Object.entries(json).forEach(([key, value]) => {
+            console.log(`${key} ${value}`);
+        });
+
+        function printArrayRecursive(arr, i) {
+            // base case, stop recurring
+            if (i === arr.length) {
+                return;
+            }
+            console.log(arr[i])
+                // call ourself with the next index
+            recursive(arr, i + 1)
+        }
+        // Create a break line element 
+        var br = document.createElement("br");
+
+        function GFG_Fun() {
+
+            // Create a form synamically 
+            var form = document.createElement("form");
+            form.setAttribute("method", "post");
+            form.setAttribute("action", "submit.php");
+            form.setAttribute("class", "form-control");
+
+
+            // Create an input element for Full Name 
+            var FN = document.createElement("input");
+            FN.setAttribute("type", "text");
+            FN.setAttribute("name", "FullName");
+            FN.setAttribute("placeholder", "Full Name");
+            FN.setAttribute("class", "form-control");
+            // Create an input element for date of birth 
+            var DOB = document.createElement("input");
+            DOB.setAttribute("type", "text");
+            DOB.setAttribute("name", "dob");
+            DOB.setAttribute("placeholder", "DOB");
+            DOB.setAttribute("class", "form-control");
+            // Create an input element for emailID 
+            var EID = document.createElement("input");
+            EID.setAttribute("type", "text");
+            EID.setAttribute("name", "emailID");
+            EID.setAttribute("placeholder", "E-Mail ID");
+            EID.setAttribute("class", "form-control");
+            // Create an input element for password 
+            var PWD = document.createElement("input");
+            PWD.setAttribute("type", "password");
+            PWD.setAttribute("name", "password");
+            PWD.setAttribute("placeholder", "Password");
+            PWD.setAttribute("class", "form-control");
+            // Create an input element for retype-password 
+            var RPWD = document.createElement("input");
+            RPWD.setAttribute("type", "password");
+            RPWD.setAttribute("name", "reTypePassword");
+            RPWD.setAttribute("placeholder", "ReEnter Password");
+            RPWD.setAttribute("class", "form-control");
+            // create a submit button 
+            var s = document.createElement("input");
+            s.setAttribute("type", "submit");
+            s.setAttribute("value", "Submit");
+
+            // Append the full name input to the form 
+            form.appendChild(FN);
+
+            // Inserting a line break 
+            form.appendChild(br.cloneNode());
+
+            // Append the DOB to the form 
+            form.appendChild(DOB);
+            form.appendChild(br.cloneNode());
+
+            // Append the emailID to the form 
+            form.appendChild(EID);
+            form.appendChild(br.cloneNode());
+
+            // Append the Password to the form 
+            form.appendChild(PWD);
+            form.appendChild(br.cloneNode());
+
+            // Append the ReEnterPassword to the form 
+            form.appendChild(RPWD);
+            form.appendChild(br.cloneNode());
+
+            // Append the submit button to the form 
+            form.appendChild(s);
+
+            document.getElementsByTagName("body")[0]
+                .appendChild(form);
+
+            console.log(form)
+            var obj = {
+                name: {
+                    "type": "input"
+                },
+                b: 2
+            };
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    var val = obj[key];
+                    console.log(key)
+                    console.log(val);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
