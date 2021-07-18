@@ -1,10 +1,13 @@
-const auth= require("./auth.routes");
-const user=require("./user.routes");
-const web=require("./web");
+const UserRoutes = require('./user.routes')
+const { authenticate } = require('../Middlewares/Auth')
+const AuthRoutes = require('./Auth.routes');
 
-module.exports = function(app) {
-    auth(app);
-    user(app);
-    web(app);
-    
-};
+// console.log(UserRoutes)
+const createRoutes = app => {
+    app.use("/api/v1/users", UserRoutes);
+
+    app.use("/api/auth", AuthRoutes)
+    app.use(authenticate);
+}
+
+module.exports = createRoutes;
